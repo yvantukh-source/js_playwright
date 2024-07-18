@@ -8,12 +8,16 @@ jobs:
         steps:
             - name: Checkout repository
               uses: actions/checkout@v2
-            - name: Run tests
+            - name: Start the shopping store application
               run:
                     echo "Start the shopping store application"
                     chmod +x ./shopping-store-linix-amd64
                     ./shopping-store-linix-amd64 &
+            - name: "Install dependencties from lockfile"
+              run:
                     echo "Install dependencties from lockfile"
                     npm ci
+            - name: "Run playwright tests"
+              run:
                     echo "Run playwright tests"
                     npm run test:ci
