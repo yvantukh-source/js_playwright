@@ -6,7 +6,14 @@ jobs:
     playwrighttests:
         runs-on: ubuntu-latest
         steps:
-            - name: Checkout repositor
+            - name: Checkout repository
               uses: actions/checkout@v2
-            - name: Say Hello
-              run: echo Hello
+            - name: Run tests
+              run:
+                    echo "Start the shopping store application"
+                    chmod +x ./shopping-store-linix-amd64
+                    ./shopping-store-linix-amd64 &
+                    echo "Install dependencties from lockfile"
+                    npm ci
+                    echo "Run playwright tests"
+                    npm run test:ci
