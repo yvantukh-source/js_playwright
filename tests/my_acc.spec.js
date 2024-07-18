@@ -3,7 +3,7 @@ import { MyAccountPage } from '../page-objects/MyAccountPage.js'
 import { getLoginToken } from './../api-calls/getLoginToken.js'
 import { adminDetaild } from '../data/userDetails.js'
 
-test.only("My acc using coockie injection", async ({page}) => {
+test("My acc using coockie injection", async ({page}) => {
     const loginToken = await getLoginToken(adminDetaild.username, adminDetaild.password)
 
     await page.route("**/api/user/**", async (route, request) => {

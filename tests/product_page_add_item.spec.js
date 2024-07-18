@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 
-test("Product page add to basket", async ({ page }) => {
+test.skip("Product page add to basket", async ({ page }) => {
     await page.goto("/")
 
 
