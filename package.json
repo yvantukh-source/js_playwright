@@ -16,6 +16,7 @@
   "dependencies": {
     "dotenv": "^16.0.3",
     "node-fetch": "^2.6.7",
+    "playwright-chromium": "^1.45.2",
     "uuid": "^9.0.0"
   }
 }
